@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register New User</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+   body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #fff8f0;   /* light smooth background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* login box */
+.login-box{
+    width: 720px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* heading */
+.login-box h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff9800;
+    letter-spacing: 1px;
+}
+
+/* form layout */
+.registration-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* two columns */
+    gap: 14px 20px;
+}
+
+/* inputs & select */
+.registration-form input,
+.registration-form select{
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 7px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    background: #fffaf4;   /* very light orange */
+}
+
+/* focus effect */
+.registration-form input:focus,
+.registration-form select:focus{
+    border-color: #ff9800;
+    box-shadow: 0 0 0 2px rgba(255,152,0,0.25);
+}
+
+/* full width items */
+.registration-form input[type="password"],
+.registration-form button,
+.registration-form p{
+    grid-column: span 2;
+}
+
+/* submit button */
+.registration-form button{
+    margin-top: 8px;
+    padding: 11px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+
+    background: #ff9800;   /* fixed orange */
+    color: white;
+    transition: 0.3s ease;
+}
+
+.registration-form button:hover{
+    background: #e68900;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* bottom text */
+.registration-form p{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+}
+
+.registration-form p a{
+    color: #ff9800;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.registration-form p a:hover{
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <button onclick="window.location.href='/'" 
+        style="position:fixed; top:20px; left:20px; padding:10px 15px; 
+               background:#ff9800; color:#fff; border:none; border-radius:8px; 
+               cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+    ← Back 
+</button>
+
+    <div class="login-box">
+        <h2>Registration User </h2>
+
+
+        <form class="registration-form" method="POST" action="/registration" >
+
+<input type="text" name="fullname" placeholder="Full Name" required><br><br>
+
+<input type="email" name="email" placeholder="Email" required><br><br>
+
+
+<input type="text" name="mobile" placeholder="Mobile"><br><br>
+
+<select name="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+</select><br><br>
+
+<input type="date" name="dob"><br><br>
+
+<input type="text" name="adhar_number" placeholder="Adhar Number"><br><br>
+
+<input type="text" name="voter_id" placeholder="Voter ID"><br><br>
+
+<input type="password" name="password" placeholder="Password" required><br><br>
+
+
+<button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Register</button>
+
+<P>ALREADY REGISTERED USER ?<a href="/user_login">Login Here</a></P>
+
+</form>
+        <!-- <form method="POST" action="/register_user">
+            <input type="text" placeholder="full_name" required>
+        <select name="gender" id="gender" required>
+             <option value="">--Select Gender--</option>
+             <option value="male">Male</option>
+             <option value="female">Female</option>
+              <option value="other">Other</option>
+        </select></p></p>
+               <input type="email" placeholder="email" required>
+             <input type="text" placeholder="adhar_number" required>
+              <input type="text" placeholder="mobile_number" required>
+               <input type="text" placeholder="voter_id" required>
+                <input type="date" placeholder="dob" required>
+                 <input type="password" placeholder="password" required>
+                <input type="password" placeholder="confirm_password" required>
+            <button type="submit">Register</button>
+        </form> -->
+        
+    </div>
+
+</body>
+</html>
