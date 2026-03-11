@@ -253,6 +253,7 @@ def get_voter_count():
 
 # ==========about page=================
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -352,10 +353,10 @@ def logout_admin():
     session.clear()
     return redirect(url_for('admin_login'))
 
-@app.route('/reset_data')
+@app.route('/reset_data', methods=['GET', 'POST'])
 def reset_data():
-    con = get_db_connection()
-    try:
+     con = get_db_connection()
+    # try:
      cur = con.cursor()
 
      cur.execute("DELETE FROM candidate_information")
@@ -364,24 +365,24 @@ def reset_data():
      cur.execute("DELETE FROM support")
 
      con.commit()
-    finally:
+    # finally:
      con.close()
 
      return jsonify({"status": "reset"})
 
 # ================Remove Users=================
 
-@app.route('/remove_all_users')
+@app.route('/remove_all_users' , methods=['POST'])
 def remove_all_users():
-    conn = get_db_connection()
-    try:
+     conn = get_db_connection()
+    # try:
      cur = conn.cursor()
 
-     # registration_information table clear
+     
      cur.execute("DELETE FROM registration_information")
 
      conn.commit()
-    finally:
+    # finally:
      conn.close()
 
      return jsonify({
@@ -493,4 +494,5 @@ def show_election():
 # ================END==================
 
 if __name__ == "__main__":
+        # app.run(debug=True)
     app.run(host="0.0.0.0",port=int(os.environ.get("PORT", 5000)))

@@ -14,6 +14,8 @@ body{
     color:white;
     min-height:100vh;
     overflow-x:hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ===== NAVBAR ===== */
@@ -94,6 +96,7 @@ body{
 .main{
     margin-top:100px;
     padding:40px;
+    flex:1;
 }
 
 /* ===== STATS BOX ===== */
